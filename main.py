@@ -9,10 +9,11 @@ from concurrent.futures import ThreadPoolExecutor
 import aiofiles
 import yt_dlp
 from fastapi import FastAPI, File, UploadFile, HTTPException, BackgroundTasks
-from fastapi.responses import StreamingResponse, FileResponse
+from fastapi.responses import StreamingResponse, FileResponse,  HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
 
 # ── dirs ──────────────────────────────────────────────────────────────────────
 BASE_DIR   = Path(__file__).parent
@@ -130,7 +131,7 @@ def _ydl_base():
 # ROUTES
 # ═════════════════════════════════════════════════════════════════════════════
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     return FileResponse(str(BASE_DIR / "index.html"))
 

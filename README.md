@@ -18,7 +18,7 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Open browser: https://video-db6q.onrender.com
+Open browser: https://video-1-avfo.onrender.com
 
 ## Features
 - 📁 Local video upload (MP4, AVI, MOV, MKV, WEBM) → MP3 conversion (64–320 kbps)
